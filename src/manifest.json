@@ -1,0 +1,25 @@
+{
+  "name": "Ashra Reader - Text To Speech",
+  "{{chrome}}.manifest_version": 3,
+  "{{firefox}}.manifest_version": 2,
+  "icons": {
+    "16": "icon/16.png",
+    "32": "icon/32.png",
+    "48": "icon/48.png",
+    "96": "icon/96.png",
+    "128": "icon/128.png"
+  },
+  "background": {
+    "{{chrome}}.service_worker": "src/background.ts",
+    "{{firefox}}.scripts": ["src/background.ts"]
+  },
+  "content_scripts": [
+    {
+      "js": ["src/scripts/content.ts", "src/scripts/selection.ts"],
+      "css": ["src/styles/index.css"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": ["activeTab", "contextMenus"],
+  "{{chrome}}.host_permissions": ["<all_urls>"]
+}
