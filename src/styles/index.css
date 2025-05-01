@@ -1,0 +1,6 @@
+.ashra__reader__hightlight {
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: background 0.5s ease-in-out;
+  display: initial;
+}
